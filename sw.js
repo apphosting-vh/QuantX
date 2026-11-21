@@ -1,4 +1,4 @@
-const APP_VERSION = '1.0.7';
+const APP_VERSION = '1.0.8';
 const CACHE_NAME = `quantx-static-v${APP_VERSION}`;
 const CORE_ASSETS = [
   './',
@@ -18,7 +18,8 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
-      Promise.all(keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k)))
+      // Only clear versioned app caches; preserve any unrelated browser caches.
+      Promise.all(keys.filter((k) => k.startsWith('quantx-static-') && k !== CACHE_NAME).map((k) => caches.delete(k)))
     ).then(() => self.clients.claim())
   );
 });
