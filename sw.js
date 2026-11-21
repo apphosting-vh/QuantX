@@ -1,4 +1,4 @@
-const APP_VERSION = '1.0.4';
+const APP_VERSION = '1.0.6';
 const CACHE_NAME = `quantx-static-v${APP_VERSION}`;
 const CORE_ASSETS = [
   './',
@@ -25,6 +25,9 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('message', (event) => {
   if (event.data?.type === 'SKIP_WAITING') self.skipWaiting();
+  if (event.data?.type === 'GET_VERSION') {
+    event.source?.postMessage({ type: 'SW_VERSION', version: APP_VERSION });
+  }
 });
 
 self.addEventListener('fetch', (event) => {
