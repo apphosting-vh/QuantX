@@ -1,7 +1,7 @@
 {
-  "name": "QuantX NSE Swing Scanner",
+  "name": "QuantX NSE Quant Intelligence",
   "short_name": "QuantX",
-  "description": "Production-grade PWA for scanning Nifty 200 technical swing setups in Indian equities.",
+  "description": "Production-grade PWA for NSE quant intelligence: technical scans, charts, signals, and watchlists.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
