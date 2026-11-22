@@ -1,4 +1,4 @@
-const APP_VERSION = '1.6.5';
+const APP_VERSION = '1.6.6';
 const CACHE_NAME = `quantx-static-v${APP_VERSION}`;
 const CORE_ASSETS = [
   './',
