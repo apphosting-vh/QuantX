@@ -9,11 +9,38 @@
     <link rel="apple-touch-icon" href="./icons/icon-192.png" />
     <link rel="manifest" href="./manifest.webmanifest" />
     <title>QuantX | NSE Swing Scanner</title>
-    <script type="module" crossorigin src="./assets/index-6xJ2OPAD.js"></script>
+    <style>
+      #boot-loader{position:fixed;inset:0;display:grid;place-items:center;background:radial-gradient(1200px 600px at 50% -10%,rgba(96,165,250,.12),transparent 50%),#070b14;color:#e6edf7;z-index:99999;transition:opacity .45s ease,visibility .45s ease}
+      #boot-loader.hide{opacity:0;visibility:hidden}
+      .boot-inner{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;padding:24px}
+      .boot-mark{width:88px;height:88px;filter:drop-shadow(0 10px 30px rgba(96,165,250,.25));animation:boot-float 3.2s ease-in-out infinite}
+      .boot-word{font:600 28px/1.1 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;background:linear-gradient(135deg,#eef7ff 0%,#93c5fd 45%,#c4b5fd 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+      .boot-sub{font:500 12px/1.4 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:rgba(148,163,184,.85)}
+      .boot-line{width:160px;height:2px;background:rgba(148,163,184,.14);border-radius:999px;overflow:hidden;position:relative}
+      .boot-line::after{content:"";position:absolute;inset:0;width:45%;background:linear-gradient(90deg,transparent,#6ee7f9,#60a5fa,#a78bfa,transparent);animation:boot-scan 1.5s ease-in-out infinite}
+      @keyframes boot-scan{from{transform:translateX(-120%)}to{transform:translateX(260%)}}
+      @keyframes boot-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+      @media (prefers-reduced-motion:reduce){.boot-mark,.boot-line::after{animation:none}}
+    </style>
+    <script type="module" crossorigin src="./assets/index-BwrMTaX_.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/react-nf7bT_Uh.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-3nX2eDpu.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-EZfPZMeZ.css">
   </head>
   <body>
+    <div id="boot-loader" aria-label="Loading QuantX">
+      <div class="boot-inner">
+        <svg class="boot-mark" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#0b1220"/><stop offset="100%" stop-color="#121f36"/></linearGradient><linearGradient id="accent" x1="0" y1="1" x2="1" y2="0"><stop offset="0%" stop-color="#6ee7f9"/><stop offset="55%" stop-color="#60a5fa"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient></defs>
+          <rect width="512" height="512" rx="128" fill="url(#bg)"/><rect x="18" y="18" width="476" height="476" rx="112" stroke="rgba(255,255,255,.08)"/>
+          <circle cx="232" cy="228" r="104" stroke="rgba(255,255,255,.14)" stroke-width="20"/><circle cx="232" cy="228" r="104" stroke="url(#accent)" stroke-width="20" stroke-linecap="round" stroke-dasharray="560 94" transform="rotate(-35 232 228)"/>
+          <path d="M292 288l52 52" stroke="url(#accent)" stroke-width="22" stroke-linecap="round"/>
+          <path d="M136 332l54-54 36 34 52-74 42 40 56-86" stroke="url(#accent)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/><circle cx="376" cy="192" r="8" fill="#dbeafe"/>
+        </svg>
+        <div class="boot-word">QuantX</div>
+        <div class="boot-sub">NSE Swing Intelligence</div>
+        <div class="boot-line"></div>
+      </div>
+    </div>
     <div id="root"></div>
   </body>
 </html>

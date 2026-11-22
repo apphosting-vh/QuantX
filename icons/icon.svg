@@ -1,12 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="QuantX logo">
   <defs>
-    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-      <stop offset="0%" stop-color="#22d3ee"/>
-      <stop offset="100%" stop-color="#3b82f6"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1220"/>
+      <stop offset="100%" stop-color="#121f36"/>
     </linearGradient>
+    <linearGradient id="accent" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6ee7f9"/>
+      <stop offset="55%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="soft" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity=".12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
   </defs>
-  <rect width="512" height="512" rx="112" fill="#0b1220"/>
-  <path d="M96 340l88-96 72 64 88-136 72 52" fill="none" stroke="url(#g)" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M344 172h72v72" fill="none" stroke="#22d3ee" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
-  <text x="104" y="408" fill="#e2e8f0" font-size="72" font-family="Arial, sans-serif" font-weight="700">QX</text>
+  <rect width="512" height="512" rx="128" fill="url(#bg)"/>
+  <rect x="18" y="18" width="476" height="476" rx="112" fill="none" stroke="rgba(255,255,255,.08)"/>
+  <path d="M128 128h256v256H128z" fill="url(#soft)" opacity=".25"/>
+  <!-- Minimal Q mark -->
+  <circle cx="232" cy="228" r="104" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="20"/>
+  <circle cx="232" cy="228" r="104" fill="none" stroke="url(#accent)" stroke-width="20" stroke-linecap="round" stroke-dasharray="560 94" transform="rotate(-35 232 228)"/>
+  <path d="M292 288l52 52" stroke="url(#accent)" stroke-width="22" stroke-linecap="round"/>
+  <!-- Quant pulse line -->
+  <path d="M136 332l54-54 36 34 52-74 42 40 56-86" fill="none" stroke="url(#accent)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+  <circle cx="376" cy="192" r="8" fill="#dbeafe"/>
 </svg>
